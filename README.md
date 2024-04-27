@@ -40,6 +40,11 @@ To stop the server, use the following command in the terminal:
 docker-compose down
 ```
 
+**⚠️ Note**: After it's been installed, you can run the server at any time again using:
+```
+docker run plex-webhook-server
+```
+
 ### Prerequisites
 **Docker**: Ensure that Docker is installed on your machine. If not, download and install Docker from [Docker's official website](https://www.docker.com/products/docker-desktop/).
 
