@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const port = 3000;
-const discordWebhookUrl = 'YOUR_DISCORD_WEBHOOK';
+const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
 app.use(cors()); // use cors middleware
 app.use(express.json()); // parse json bodies
@@ -65,8 +65,6 @@ async function extractData(url, library) {
   await browser.close();
   return data;
 }
-
-
 
 // function to send data to discord using webhook
 async function sendToDiscord(data, url) {
