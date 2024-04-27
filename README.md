@@ -23,7 +23,7 @@ DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/.../...
 ### Step 3: Run Docker Compose
 Build the docker image using `docker-compose`.
 ```
-docker-compose up
+docker compose up
 ```
 This command will:
 
@@ -37,7 +37,7 @@ Once the Docker Compose process is running, open your web browser and navigate t
 ### Step 5: Stopping the Server
 To stop the server, use the following command in the terminal:
 ```
-docker-compose down
+docker compose down
 ```
 
 **⚠️ Note**: After it's been installed, you can run the server at any time again using:
