@@ -2,7 +2,37 @@
 Plex Webhook Server is a Node.js application designed to interact with Plex media server URLs. It allows users to submit a URL from the Plex platform and specifies the media library category (e.g., Anime, Movies, TV Shows). The server processes these URLs using Puppeteer to scrape relevant media information, then sends a formatted message to a specified Discord webhook, notifying about media additions to Plex libraries.
 
 ## Installation
-Instructions on how to install and set up the project will be added here.
+This project uses Docker to ensure it runs smoothly both in development and production environments. Follow these steps to set up and run the Plex Webhook Server using Docker.
+
+### Step 1: Clone the Repository
+First, clone the repository to your local machine using Git:
+```
+git clone https://github.com/vidun-jay/plex-discohook.git
+cd plex-webhook-server
+```
+
+### Step 2: Run Docker Compose
+Build the docker image using `docker-compose`.
+```
+docker-compose up
+```
+This command will:
+
+- Build the Docker image from the Dockerfile if it's not already built.
+- Start a container based on that image.
+- Attach the container output to the terminal window.
+
+### Step 3: Verify Installation
+Once the Docker Compose process is running, open your web browser and navigate to [http://localhost:3000](http://localhost:3000). You should see the Plex Webhook Server interface, indicating that the server is running correctly.
+
+### Step 4: Stopping the Server
+To stop the server, use the following command in the terminal:
+```
+docker-compose down
+```
+
+### Prerequisites
+**Docker**: Ensure that Docker is installed on your machine. If not, download and install Docker from [Docker's official website](https://www.docker.com/#build).
 
 ## Creating a Discord Webhook
 To use the Discord integration feature, you need to create a webhook in your Discord server. Here’s how to set it up:
@@ -14,7 +44,7 @@ To use the Discord integration feature, you need to create a webhook in your Dis
 5. Copy Webhook URL: After creating the webhook, click the Copy Webhook URL button to get the URL. This is the URL you will use in your project to send messages to Discord.
 
 ## How to Use
-1. Start the Server: Run the server using Docker or directly with Node.js (details will be provided in the Installation section).
+1. Start the Server: Run the server using Docker or directly with Node.js
 2. Access the Web Interface: Open your web browser and navigate to http://localhost:3000. This will load the interactive interface.
 3. Enter Plex URL: In the web interface, input a valid Plex URL into the URL field.
 4. Select Library: Choose the appropriate library category for the media from the dropdown menu.
