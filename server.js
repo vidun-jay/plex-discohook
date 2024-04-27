@@ -38,7 +38,10 @@ app.post('/process-url', express.json(), async (req, res) => {
 
 // function that launches puppeteer and scrapes the webpage
 async function extractData(url, library) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium",
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle0' });
 
@@ -65,6 +68,7 @@ async function extractData(url, library) {
   await browser.close();
   return data;
 }
+
 
 // function to send data to discord using webhook
 async function sendToDiscord(data, url) {

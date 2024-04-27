@@ -3,6 +3,7 @@ WORKDIR /usr/src/app
 
 # install Puppeteer dependencies
 RUN apt-get update && apt-get install -y \
+    chromium \
     wget \
     ca-certificates \
     fonts-liberation \
