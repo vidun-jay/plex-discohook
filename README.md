@@ -1,3 +1,6 @@
+![Node.js Version](https://img.shields.io/badge/node-v21.7.1-brightgreen)
+![Docker Version](https://img.shields.io/badge/docker-v20.10.15-blue)
+
 ## Overview
 Plex Webhook Server is a Node.js application designed to interact with Plex media server URLs. It allows users to submit a URL from the Plex platform and specifies the media library category (e.g., Anime, Movies, TV Shows). The server processes these URLs using Puppeteer to scrape relevant media information, then sends a formatted message to a specified Discord webhook, notifying about media additions to Plex libraries.
 
@@ -11,7 +14,13 @@ git clone https://github.com/vidun-jay/plex-discohook.git
 cd plex-webhook-server
 ```
 
-### Step 2: Run Docker Compose
+### Step 2: Set Up Environment Variables
+Open the .env file in the root directory of the project and add your Discord webhook URL to it:
+```
+DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/.../...
+```
+
+### Step 3: Run Docker Compose
 Build the docker image using `docker-compose`.
 ```
 docker-compose up
@@ -22,17 +31,17 @@ This command will:
 - Start a container based on that image.
 - Attach the container output to the terminal window.
 
-### Step 3: Verify Installation
+### Step 4: Verify Installation
 Once the Docker Compose process is running, open your web browser and navigate to [http://localhost:3000](http://localhost:3000). You should see the Plex Webhook Server interface, indicating that the server is running correctly.
 
-### Step 4: Stopping the Server
+### Step 5: Stopping the Server
 To stop the server, use the following command in the terminal:
 ```
 docker-compose down
 ```
 
 ### Prerequisites
-**Docker**: Ensure that Docker is installed on your machine. If not, download and install Docker from [Docker's official website](https://www.docker.com/#build).
+**Docker**: Ensure that Docker is installed on your machine. If not, download and install Docker from [Docker's official website](https://www.docker.com/products/docker-desktop/).
 
 ## Creating a Discord Webhook
 To use the Discord integration feature, you need to create a webhook in your Discord server. Here’s how to set it up:
