@@ -48,7 +48,7 @@ async function extractData(url, library) {
   // scrape the data from the page
   const data = await page.evaluate((lib) => {
     const titleSelector = 'h1';
-    const descriptionSelector = '.ineka90.ineka9j.ineka9a.ineka9n._1v25wbq1g._1v25wbq1c._1v25wbqk8';
+    const descriptionSelector = '.ineka90.ineka9j.ineka9a.ineka9n._1v25wbq1g._1v25wbq1c._1v25wbqlk';
     const imageSelector = '._1h4p3k00._1v25wbq8._1v25wbq1w._1v25wbqk._1v25wbq1g._1v25wbq18._1v25wbq14._1v25wbq3g._1v25wbq28';
 
     let title = document.querySelector(titleSelector)?.textContent.trim() || 'No title found';
